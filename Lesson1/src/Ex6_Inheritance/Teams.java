@@ -24,7 +24,5 @@ public class Teams {
             magicians[i] = new Magician();
             System.out.println(magicians[i].getInfo());
         }
-
     }
-
 }

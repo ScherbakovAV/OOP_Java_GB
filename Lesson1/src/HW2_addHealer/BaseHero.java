@@ -1,9 +1,15 @@
-package Ex6_Inheritance;
+package HW2_addHealer;
 
 import java.util.Random;
 
-public class BaseHero { // базовый класс
-    protected static int number; // protected - доступно в рамках текущего класса и в рамках всех классов-наследников
+public class BaseHero {
+    enum IsLife {
+        Dead, Life
+    }
+
+    private IsLife life;
+
+    protected static int number;
     protected static Random r;
 
     protected String name;
@@ -19,6 +25,7 @@ public class BaseHero { // базовый класс
         this.name = name;
         this.hp = hp;
         this.maxHp = hp;
+        this.life = IsLife.Life;
     }
 
     public BaseHero() {
@@ -38,7 +45,11 @@ public class BaseHero { // базовый класс
     public void GetDamage(int damage) {
         if (this.hp - damage > 0) {
             this.hp -= damage;
-        }
-        // else { die(); }
+        } else this.life = IsLife.Dead;
+    }
+
+    public boolean getLife() {
+        if (this.life == IsLife.Dead) return true;
+        return false;
     }
 }

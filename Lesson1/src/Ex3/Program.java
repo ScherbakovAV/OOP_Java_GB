@@ -2,8 +2,8 @@ package Ex3;
 
 public class Program {
     public static void main(String[] args) {
-        Point2D a = new Point2D(0, 2);
-        a.setX(12);
+        Point2D a = new Point2D(10, 2);
+        a.setX(0);
 
         System.out.println("x: " + a.getX() + ", y: " +  a.getY());
 
